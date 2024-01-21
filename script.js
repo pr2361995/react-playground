@@ -1,14 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
-const leafNode = [
-    React.createElement("h1",{className:"heading"},"hello javascript"),
-    React.createElement("h2",{className:"sub-heading"},"hello javascript"),
-];
-const child = React.createElement("div",{},[
-    React.createElement("div",{id:"child1"},leafNode),
-    React.createElement("div",{id:"child2"},leafNode)
-]);
-const root = ReactDOM.createRoot(document.getElementById("root"))
-console.log(root);
-root.render(child);
+const Heading = (<h1>learning react</h1>);
+
+const Tittle = (props) => {
+    console.log(props);
+    return <><h1>I learned React JS</h1><span> {props.name} </span><span> {props.children}</span></>;
+};
+
+console.log(Heading);
+
+const HeaderComponent = () => {
+    return (<div className="heading">
+                {Heading}
+                {Tittle({children: "prasanth",name:"byteally"})}
+                <Tittle name="prodapt">priya</Tittle>
+            </div>);
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<HeaderComponent></HeaderComponent>);

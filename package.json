@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "this is learning project",
   "scripts": {
+    "start":"parcel home.html",
+    "build":"parcel build home.html",
     "test": "jest"
   },
   "repository": {

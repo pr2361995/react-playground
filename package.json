@@ -1,0 +1,33 @@
+{
+  "name": "react-playground",
+  "version": "1.0.0",
+  "description": "this is learning project",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pr2361995/react-playground.git"
+  },
+  "keywords": [
+    "react",
+    "learning"
+  ],
+  "author": "prasanth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pr2361995/react-playground/issues"
+  },
+  "homepage": "https://github.com/pr2361995/react-playground#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browsersList": [
+    "last 2 versions"
+  ]
+}

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "this is learning project",
   "scripts": {
-    "start":"parcel home.html",
-    "build":"parcel build home.html",
+    "start": "parcel home.html",
+    "build": "parcel build home.html",
     "test": "jest"
   },
   "repository": {
@@ -23,7 +23,8 @@
   "homepage": "https://github.com/pr2361995/react-playground#readme",
   "devDependencies": {
     "parcel": "^2.11.0",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
   },
   "dependencies": {
     "react": "^18.2.0",

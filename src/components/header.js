@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const sty = {
@@ -14,9 +15,15 @@ const Header = () => {
             </div>
             <div className="">
                 <ul className="flex">
-                    <li className="px-4 py-2">Home</li>
-                    <li className="px-4 py-2">Contact</li>
-                    <li className="px-4 py-2">About</li>
+                    <li className="px-4 py-2">
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="px-4 py-2">
+                        <Link to="/contact">Contact</Link>
+                    </li>
+                    <li className="px-4 py-2">
+                        <Link to="/about">About</Link>
+                    </li>
                     <li className="px-4 py-2">Profile</li>
                 </ul>
             </div>

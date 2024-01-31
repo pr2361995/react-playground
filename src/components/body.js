@@ -2,6 +2,7 @@ import React, { useDebugValue, useEffect, useState } from "react";
 import {restaurants} from "../utils/constants";
 import {imgurl} from "../utils/url";
 import { ShimmerUI } from "./shimmerUI";
+import { Link } from "react-router-dom";
 
 export const Body = () => {
     const [restaurant,setRestaurant] = useState([]);
@@ -21,7 +22,7 @@ export const Body = () => {
         // setRestroName(json)
     }
     useEffect(() => {
-        fetchData().then(a => setRestaurant(restaurants)).catch(e => console.error(e));
+        fetchData().then(a => setRestaurant(restaurants.data?.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants)).catch(e => setRestaurant(restaurants.data?.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants));
     },[])
     return (restaurant.length === 0 ?
                 <div className="body-container">
@@ -39,17 +40,19 @@ export const Body = () => {
                 <div className="flex flex-wrap gap-5 flex-row p-4">
                     {
                         restaurant.filter(res => res.info.name.toLocaleLowerCase().includes(restroName.toLowerCase())).map((restro)=> { 
-                            return (<div className="w-96 p-4 border-2 hover:shadow-lg">
-                                <div style={sty}>
-                                    <img className="restro" src={imgurl + restro.info.cloudinaryImageId}></img>
-                                </div>
-                                <div className="w-auto">
-                                    <div>{restro.info.name}</div>
-                                    <div>{restro.info.areaName}</div>
-                                    <div>{restro.info.costForTwo}</div>
-                                    <div>{restro.info.avgRatingString}</div>
-                                </div>
-                            </div>)
+                            return (<Link key={restro.info.id} to={"/restaurants/"+restro.info.id}>
+                                        <div className="w-96 p-4 border-2 hover:shadow-lg">
+                                                <div style={sty}>
+                                                    <img className="restro" src={imgurl + restro.info.cloudinaryImageId}></img>
+                                                </div>
+                                                <div className="w-auto">
+                                                    <div>{restro.info.name}</div>
+                                                    <div>{restro.info.areaName}</div>
+                                                    <div>{restro.info.costForTwo}</div>
+                                                    <div>{restro.info.avgRatingString}</div>
+                                                </div>
+                                        </div>
+                                    </Link>)
                         })
                     }
                 </div>

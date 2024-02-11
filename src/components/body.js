@@ -1,8 +1,7 @@
 import React, { useDebugValue, useEffect, useState } from "react";
 import {restaurants} from "../utils/constants";
-import {imgurl} from "../utils/url";
 import { ShimmerUI } from "./shimmerUI";
-import { Link } from "react-router-dom";
+import { RestaurantCard,restaurantCardWithLabel } from "./restaurantCard";
 
 export const Body = () => {
     const [restaurant,setRestaurant] = useState([]);
@@ -10,17 +9,14 @@ export const Body = () => {
     
     console.log("changed the restro name");
 
-    const sty = {
-        aspectRatio:"3/2",
-        objectFit:"contain",
-        mixBlendMode:"color-burn"
-    };
     const fetchData = async () => {
         const swiApi = await fetch("https://dummy.restapiexample.com/api/v1/employees");
         const json = await swiApi.json();
         return json;
         // setRestroName(json)
     }
+    const RestaurantCardWithLabel = restaurantCardWithLabel(RestaurantCard)
+    console.log("RestaurantCardWithLabel", RestaurantCardWithLabel);
     useEffect(() => {
         fetchData().then(a => setRestaurant(restaurants.data?.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants)).catch(e => setRestaurant(restaurants.data?.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants));
     },[])
@@ -40,19 +36,7 @@ export const Body = () => {
                 <div className="flex flex-wrap gap-5 flex-row p-4">
                     {
                         restaurant.filter(res => res.info.name.toLocaleLowerCase().includes(restroName.toLowerCase())).map((restro)=> { 
-                            return (<Link key={restro.info.id} to={"/restaurants/"+restro.info.id}>
-                                        <div className="w-96 p-4 border-2 hover:shadow-lg">
-                                                <div style={sty}>
-                                                    <img className="restro" src={imgurl + restro.info.cloudinaryImageId}></img>
-                                                </div>
-                                                <div className="w-auto">
-                                                    <div>{restro.info.name}</div>
-                                                    <div>{restro.info.areaName}</div>
-                                                    <div>{restro.info.costForTwo}</div>
-                                                    <div>{restro.info.avgRatingString}</div>
-                                                </div>
-                                        </div>
-                                    </Link>)
+                            return ( restro.card?.loyaltyDiscoverPresentationInfo?.freedelMessage !== null ? <RestaurantCardWithLabel restro={restro}/> : <RestaurantCard  restro={restro}/>)
                         })
                     }
                 </div>

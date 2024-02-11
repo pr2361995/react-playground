@@ -548,6 +548,14 @@ video {
   visibility: visible;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
 .m-4 {
   margin: 1rem;
 }
@@ -572,16 +580,12 @@ video {
   width: 24rem;
 }
 
-.w-auto {
-  width: auto;
-}
-
-.w-\[100px\] {
-  width: 100px;
-}
-
 .w-\[300px\] {
   width: 300px;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .flex-row {

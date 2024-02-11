@@ -24,7 +24,9 @@ const Header = () => {
                     <li className="px-4 py-2">
                         <Link to="/about">About</Link>
                     </li>
-                    <li className="px-4 py-2">Profile</li>
+                    <li className="px-4 py-2">
+                        <Link to="/profile">Profile</Link>
+                    </li>
                 </ul>
             </div>
         </div>

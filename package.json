@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel home.html",
     "build": "parcel build home.html",
-    "test": "jest"
+    "test": "jest",
+    "css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.21.3",

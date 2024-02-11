@@ -10,6 +10,8 @@ import { hooksUseMemo,hooksUseRef } from "./src/components/hooks";
 import {Outlet,RouterProvider} from "react-router";
 import {createBrowserRouter} from "react-router-dom";
 import { RestaurantMenu } from "./src/components/restaurant";
+import {UserClass,UserClass2} from "./src/components/Classify/userClass"
+import { Profile } from "./src/profile";
 
 const App = () => {
     return (
@@ -28,6 +30,9 @@ const appRouter = createBrowserRouter([
             {
                 path : "/",
                 element : <Body/>,
+            },{
+                path:"/profile",
+                element: <Profile></Profile>
             },{
                 path : "/about",
                 element : <About/>,

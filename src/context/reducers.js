@@ -1,4 +1,4 @@
-export default function cartReducer (state,action){
+export const cartReducer = (state,action) => {
     switch (action.type){
         case "AddCart"    : {
             return (

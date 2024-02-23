@@ -1,5 +1,5 @@
 import React ,{useContext, useState} from 'react'
-import { CartContext } from '../context/cart'
+import { CartContext } from '../context/contexts'
 
 export const ItemCard = ({itemDetail}) => {
     const {cartDetails,setDispatch} = useContext(CartContext);

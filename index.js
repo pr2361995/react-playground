@@ -13,8 +13,8 @@ import { MenuCard } from "./src/components/menuCard";
 import {UserClass,UserClass2} from "./src/components/Classify/userClass"
 import { Profile } from "./src/profile";
 import {Cart} from "./src/components/cart"
-import { CartContext } from "./src/context/cart";
-import cartReducer from "./src/context/cartReducer"
+import { CartContext } from "./src/context/contexts";
+import { cartReducer } from "./src/context/reducers"
 import {DemoForm} from "./src/components/demo"
 
 const App = () => {

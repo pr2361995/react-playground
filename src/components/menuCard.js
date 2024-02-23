@@ -20,7 +20,6 @@ export const MenuCard = () => {
         const json = await resbody.json();
         return json;
     }   
-    console.log("itemcategorys ", itemcategorys);
     
     if (itemcategorys == []) return <Error/>
     

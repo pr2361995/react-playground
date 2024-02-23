@@ -3,7 +3,6 @@ import {vegMenuList} from "../utils/menu"
 import {ItemCards} from "./itemCards";
 
 export const Accordion = (props) => {
-    console.log("props",props);
     const categoryDeail = props.itemcate.card?.card;
     const {isOpen,setOpen,index} = props.openStatus
 

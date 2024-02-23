@@ -17,9 +17,6 @@ const Header = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li className="px-4 py-2">
-                        <Link to="/cart">Cart ( {cartDetails?.reduce((acc,cu) => acc + cu.repeat,0) } - items )</Link>
-                    </li>
-                    <li className="px-4 py-2">
                         <Link to="/contact">Contact</Link>
                     </li>
                     <li className="px-4 py-2">
@@ -27,6 +24,9 @@ const Header = () => {
                     </li>
                     <li className="px-4 py-2">
                         <Link to="/profile">Profile</Link>
+                    </li>
+                    <li className="px-4 py-2">
+                        <Link to="/cart">Cart ( {cartDetails?.reduce((acc,cu) => acc + cu.repeat,0) } )</Link>
                     </li>
                 </ul>
             </div>

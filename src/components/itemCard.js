@@ -5,7 +5,7 @@ export const ItemCard = ({itemDetail}) => {
     const {cartDetails,setDispatch} = useContext(CartContext);
 
     return (
-        <div className='max-w-[500px] m-auto p-4 rounded-md bg-white my-4 flex justify-between drop-shadow-sm hover:drop-shadow-md'>
+        <div className='mx-4 mt-2 p-4 rounded-md bg-white my-4 flex justify-between drop-shadow-sm hover:drop-shadow-md'>
             <div className=''>
                 <div className=''>{itemDetail?.isVeg == 1 ? "Veg" : "Non-veg"}</div>
                 <div className='font-bold'>{itemDetail?.name}</div>

@@ -15,6 +15,7 @@ import { Profile } from "./src/profile";
 import {Cart} from "./src/components/cart"
 import { CartContext } from "./src/context/cart";
 import cartReducer from "./src/context/cartReducer"
+import {DemoForm} from "./src/components/demo"
 
 const App = () => {
     const cartDetails = useContext(CartContext);
@@ -48,7 +49,12 @@ const appRouter = createBrowserRouter([
             },{
                 path : "/contact",
                 element : <Contact/>,
-            },{
+            }
+            ,{
+                path : "/demo",
+                element : <DemoForm/>,
+            }
+            ,{
                 path : "/restaurants/:restaurant_id",
                 element : <MenuCard/>,
                 loader : ({request,params}) => {

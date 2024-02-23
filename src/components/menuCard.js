@@ -6,6 +6,7 @@ import { vegMenuList } from '../utils/menu';
 
 export const MenuCard = () => {
     const [itemcategorys,setTtemcategorys] = useState([]);
+    const [isOpen,setOpen] = useState(0);
     const params = useParams();
 
 
@@ -19,13 +20,13 @@ export const MenuCard = () => {
         const json = await resbody.json();
         return json;
     }   
-    // console.log("itemcategorys ", itemcategorys);
+    console.log("itemcategorys ", itemcategorys);
     
     if (itemcategorys == []) return <Error/>
-
+    
     return (
             <div className="flex flex-wrap flex-col gap-5 bg-slate-100">
-                {itemcategorys.map((itemcategory,ind) => <Accordion key={ind} itemcate={itemcategory}/>)}
+                {itemcategorys.map((itemcategory,index) => <Accordion key={index} openStatus={{isOpen,setOpen,index}} itemcate={itemcategory}/>)}
             </div>
         )
 }

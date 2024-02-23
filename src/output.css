@@ -648,12 +648,20 @@ video {
   width: auto;
 }
 
+.w-\[300px\] {
+  width: 300px;
+}
+
 .min-w-\[1020px\] {
   min-width: 1020px;
 }
 
 .max-w-\[500px\] {
   max-width: 500px;
+}
+
+.max-w-\[300px\] {
+  max-width: 300px;
 }
 
 .transform {

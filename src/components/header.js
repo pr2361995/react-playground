@@ -1,8 +1,12 @@
 import React,{useContext} from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/contexts";
+import { useSelector } from "react-redux";
+
 const Header = () => {
-    const {cartDetails} = useContext(CartContext);
+    // const {cartDetails} = useContext(CartContext);
+    const cartDetails = useSelector(store => store.cart);
+    console.log("cartDetails",cartDetails);
 
     return (
         <div className="flex bg-rose-400 justify-between items-center flex-row border-b-2 px-4">
@@ -26,7 +30,7 @@ const Header = () => {
                         <Link to="/profile">Profile</Link>
                     </li>
                     <li className="px-4 py-2">
-                        <Link to="/cart">Cart ( {cartDetails?.reduce((acc,cu) => acc + cu.repeat,0) } )</Link>
+                        <Link to="/cart">Cart ( {cartDetails && cartDetails.reduce((acc,cu) => acc + cu.repeat,0) } )</Link>
                     </li>
                 </ul>
             </div>

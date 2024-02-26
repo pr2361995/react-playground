@@ -16,17 +16,21 @@ import {Cart} from "./src/components/cart"
 import { CartContext } from "./src/context/contexts";
 import { cartReducer } from "./src/context/reducers"
 import {DemoForm} from "./src/components/demo"
+import store from "./src/store/appStore";
+import { Provider } from "react-redux";
 
 const App = () => {
-    const cartDetails = useContext(CartContext);
-    const [state,setDispatch] = useReducer(cartReducer,cartDetails);
+    // const cartDetails = useContext(CartContext);
+    // const [state,setDispatch] = useReducer(cartReducer,cartDetails);
     return (
-        <CartContext.Provider value={{cartDetails:state,setDispatch}}>
+        <Provider store={store}>
+        {/* <CartContext.Provider value={{cartDetails:state,setDispatch}}> */}
             <div className="app">
                 <Header></Header>
                 <Outlet/>
             </div>
-        </CartContext.Provider>
+        {/* </CartContext.Provider> */}
+        </Provider>
     );
 }
 const appRouter = createBrowserRouter([

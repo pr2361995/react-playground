@@ -5,10 +5,12 @@ const cartSlice = createSlice({
     initialState : [] ,
     reducers : {
         addCart : (state,action) => {
-            if (state.some(a => a.dish.id == action.payload.id))
-                return [...state].map(a => a.dish.id == action.payload.id ? {dish:a.dish,repeat:a.repeat+ 1}  : a)
-            else 
-                return [...state,{dish:action.payload,repeat:1}]
+            return ( 
+                state.some(a => a.dish.id == action.payload.id) ?
+                    [...state].map(a => a.dish.id == action.payload.id ? {dish:a.dish,repeat:a.repeat+ 1}  : a)
+                : 
+                    [...state,{dish:action.payload,repeat:1}]
+            )
         },
         removeCart : (state,action) => {
             return (
